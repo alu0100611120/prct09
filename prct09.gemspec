@@ -6,8 +6,8 @@ require 'prct09/version'
 Gem::Specification.new do |spec|
   spec.name          = "prct09"
   spec.version       = Prct09::VERSION
-  spec.authors       = ["Cabaleiro"]
-  spec.email         = ["cabaleiro8@gmail.com"]
+  spec.authors       = ["Iván Cabaleiro Escudero y Maurizio A. Rendón"]
+  spec.email         = ["alu0100611120@ull.edu.es"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
