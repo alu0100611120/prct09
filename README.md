@@ -1,8 +1,8 @@
 # Prct09
 
-TODO: Write a gem description
+Esta gema permite gestionar matrices densas o dispersas de forma diferente para mejorar el uso de la memoria.
 
-## Installation
+## Instalacion
 
 Add this line to your application's Gemfile:
 
@@ -16,11 +16,21 @@ Or install it yourself as:
 
     $ gem install prct09
 
-## Usage
+## Uso
 
-TODO: Write usage instructions here
+Para utilizar esta librería, debes incluir el fichero prct09:
 
-## Contributing
+    require 'prct09'
+
+Para contribuir en con el desarrollo del código hay que instalar las dependencias de la librería. Esto se hace automáticamente ejecutando:
+
+    bundle
+
+En caso de no tener bundle instalado o que la versión sea antigua, ejecuta:
+
+    gem install bundle
+
+## Contribuir
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -28,6 +38,10 @@ TODO: Write usage instructions here
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-Autores: Iván Cabaleiro Escudero y Maurizio A. Rendón
+## Jerarquía de clases
 
-#Jerarquía de clases
+Las clases MatrizDensa y MatrizDispersas serán subclases de la clase Matriz. Cada una implementará como corresponda los comportamientos heredados.
+
+## Autores
+
+Autores: Iván Cabaleiro Escudero y Maurizio A. Rendón.
