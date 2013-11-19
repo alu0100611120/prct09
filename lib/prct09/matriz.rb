@@ -1,11 +1,11 @@
 class Matriz
 	#Variables
-	attr_accessor :m
+	#attr_accessor :m
 	
-	def initialize (matriz)
-		raise ArgumentError, 'El parametro debe ser una matriz' unless matriz.is_a? Array
-		@m = matriz
-	end
+	#def initialize (matriz)
+		#raise ArgumentError, 'El parametro debe ser una matriz' unless matriz.is_a? Array
+		#@m = matriz
+	#end
 
 	def mostrar()
 		texto=""
