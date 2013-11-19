@@ -42,6 +42,14 @@ En caso de no tener bundle instalado o que la versión sea antigua, ejecuta:
 
 Las clases MatrizDensa y MatrizDispersas serán subclases de la clase Matriz. Cada una implementará como corresponda los comportamientos heredados.
 
+## Ampliación práctica 10
+Considere la Gema para Matrices que empezó a desarrollar en la práctica anterior. El objetivo de esta práctica es terminar su creación.
+1.- Desarrollar métodos para calcular el máximos y el mínimo de los elementos de una matriz.
+2.- Construir la gema
+gem build
+3.- Considerar su publicacion
+gem push
+
 ## Autores
 
 Autores: Iván Cabaleiro Escudero y Maurizio A. Rendón.
