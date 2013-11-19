@@ -1,7 +1,19 @@
-$:.unshift File.dirname(__FILE__) + 'lib'
+$:.unshift File.dirname('prct09_spec.rb') + './lib/*'
 
-require "bundler/gem_tasks"
-
+require 'rake'
 require 'rspec/core/rake_task'
-Rspec::Core::Raketask.new
+
+RSpec::Core::RakeTask.new
+
 task :default => :spec
+
+
+        desc "run rspec tests and documentation"
+        task :doc do
+                sh "rspec -Ilib ./lib/* -Ispec spec/prct09_spec.rb --format documentation"
+        end
+        
+        desc "build HTML"
+        task :html do
+                sh "rspec -Ilib ./lib/* -Ispec spec/prct09_spec.rb --format html > pruebas.html"
+        end
