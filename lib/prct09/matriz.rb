@@ -1,5 +1,6 @@
 class Matriz
-	#Variables
+	#Variable
+	attr_accessor :fi, :co
 	#attr_accessor :m
 	
 	#def initialize (matriz)
