@@ -1,4 +1,4 @@
-require 'matriz.rb'
+require 'prct09/matriz.rb'
 
 class Matriz_densa < Matriz
 
