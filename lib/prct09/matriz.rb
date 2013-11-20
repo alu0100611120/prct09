@@ -3,10 +3,12 @@ class Matriz
 	attr_accessor :fi, :co
 	#attr_accessor :m
 	
-	#def initialize (matriz)
-		#raise ArgumentError, 'El parametro debe ser una matriz' unless matriz.is_a? Array
-		#@m = matriz
-	#end
+	def initialize (fi, co)
+		raise ArgumentError, 'El parametro debe ser entero' unless fi.is_a? Integer
+		raise ArgumentError, 'El parametro debe ser entero' unless co.is_a? Integer
+		@fi = fi
+		@co = co
+	end
 
 	def mostrar()
 		texto=""
@@ -31,13 +33,13 @@ class Matriz
 	end
 
 	def +(o)
-		@result = @m
-		for i in 0...@m.length do
-			for k in 0...@m[i].length do
-				@result[i][k] = @m[i][k] + o[i][k]
+		@result = [[]]
+		for i in 0...@fi do
+			for k in 0...@co do
+				@result[i][k] = self.@m[i][k] + o[i][k]
                         end
 		end
-		return Matriz.new(@result)
+		return @result
 	end
 
         def -(o)
