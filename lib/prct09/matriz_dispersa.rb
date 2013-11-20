@@ -1,4 +1,4 @@
-require 'matriz.rb'
+require 'prct09/matriz.rb'
 
 class SparseVector 
   attr_reader :vector
@@ -17,7 +17,7 @@ class SparseVector
   end
 end
 
-class SparseMatrix < Matriz
+class Matriz_dispersa < Matriz
 
   attr_reader :matrix
 
