@@ -17,7 +17,7 @@ class Racional
                 @den = den/mcd
   end
 	def coerce(o)
-		n = Racional.new(o, 1)
+		if o.is_a? Numeric  then n = Racional.new(o, 1) end
 		return [n, self]
 	end
 	
