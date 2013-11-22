@@ -75,5 +75,26 @@ class Matriz_dispersa < Matriz
     end
     min
    end
+=begin
+	 def to_den
+			a = Array.new(@fi, Array.new(@co, 0))
+			for i in @m.keys do
+				for j in @m[i].keys do
+					a[i][j] = @m[i][j]
+				end
+			end
+			return Matriz_densa(a)
+	 end
+	 def +(o)
+			if o.class == Matriz_dispersa then
+				for i in o.keys do
+					for j in o[i].keys do
+						@m[i][j]
+					end
+				end
+			else
+			end
+	 end
+=end
 
 end

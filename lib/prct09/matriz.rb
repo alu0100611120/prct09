@@ -33,13 +33,13 @@ class Matriz
 	end
 
 	def +(o)
-		@result = [[]]
+		result = Array.new(@fi, Array.new(@co, 0))
 		for i in 0...@fi do
 			for k in 0...@co do
-				@result[i][k] = @m[i][k] + o[i][k]
+				result[i][k] = @m[i][k] + o[i][k]
                         end
 		end
-		return @result
+		return result
 	end
 
         def -(o)

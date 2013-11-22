@@ -41,7 +41,7 @@ describe Matriz do
         end
 	
 	it "Se deben sumar dos matrices dispersas" do
-		#@mdis+@mdis.should == 0
+		(@mdis+@mdis).should == [[0, 0, 6], [0, 0, 6], [0, 0, 6]]
 	end
 	it "Se deben mostrar las matrices densas" do
 		@mden.mostrar.should == "0 1 2 \n1 2 3 \n3 4 5 "
