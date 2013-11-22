@@ -1,4 +1,4 @@
-require "./lib/gcd.rb"
+require "prct09/gcd.rb"
 
 class Racional
 
@@ -60,14 +60,24 @@ class Racional
 	end
 
 	def +(other)
-          num = (@num * other.denom) + (other.num * @den)
-          den = (@den * other.denom)
-          Racional.new(num, den)
-    	end
+	  if other.class == Racional then
+          	num = (@num * other.denom) + (other.num * @den)
+          	den = (@den * other.denom)          	
+	  else
+		num = @num+ (other * @den)
+		den = @den
+    	  end
+	return Racional.new(num, den)
+	end
 
 	def -(other)
-          num = (@num * other.denom) - (other.num * @den)
-          den = (@den * other.denom)
+	  if other.class == Racional then
+         	 num = (@num * other.denom) - (other.num * @den)
+          	den = (@den * other.denom)
+	  else
+		num = @num - (other * @den)
+		den = @den
+	  end
           Racional.new(num, den)
         end
 
