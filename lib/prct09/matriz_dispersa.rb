@@ -1,7 +1,7 @@
 require 'prct09/matriz.rb'
 
 class SparseVector 
-  attr_reader :vector
+  attr_accessor :vector
 
   def initialize(h = {})
     @vector = Hash.new(0)
@@ -26,7 +26,7 @@ end
 
 class Matriz_dispersa < Matriz
 
-  attr_reader :m
+  attr_accessor :m
 
   def initialize(h = {})
     fi,co= 0,0
@@ -75,7 +75,10 @@ class Matriz_dispersa < Matriz
     end
     min
    end
-=begin
+	 def m
+		return @m
+	 end
+
 	 def to_den
 			a = Array.new(@fi, Array.new(@co, 0))
 			for i in @m.keys do
@@ -83,18 +86,42 @@ class Matriz_dispersa < Matriz
 					a[i][j] = @m[i][j]
 				end
 			end
-			return Matriz_densa(a)
+			return Matriz_densa.new(a)
 	 end
-	 def +(o)
-			if o.class == Matriz_dispersa then
-				for i in o.keys do
-					for j in o[i].keys do
-						@m[i][j]
-					end
-				end
-			else
-			end
-	 end
-=end
+	 def -(o)
+		a = self.to_den
+		if o.class == Matriz_dispersa then
+    	for i in o.m.keys do
+        	for j in o.m[i].keys do
+          	a[i][j] = a[i][j] - o[i][j]
+        	end
+      	end
+    	return a.m
+		else
+			a-o
+		end
+	end
+  def +(o)
+    a = self.to_den
+    if o.class == Matriz_dispersa then
+      for i in o.m.keys do
+          for j in o.m[i].keys do
+            a[i][j] = a[i][j] + o[i][j]
+          end
+        end
+      return a.m
+    else
+      a+o
+    end
+  end
+	def *(o)
+		a = self.to_den
+		if o.class == Matriz_dispersa then
+			return a * o.to_den
+		else
+			return a * o
+		end
+	end
+
 
 end

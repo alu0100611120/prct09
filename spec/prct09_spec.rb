@@ -40,13 +40,27 @@ describe Matriz do
                 @mdis.min.should == 1
         end
 	
-	it "Se deben sumar dos matrices dispersas" do
-		(@mdis+@mdis).should == [[0, 0, 6], [0, 0, 6], [0, 0, 6]]
-	end
 	it "Se deben mostrar las matrices densas" do
 		@mden.mostrar.should == "0 1 2 \n1 2 3 \n3 4 5 "
 	end 
 	it "Se deben mostrar matrices dispersas" do
 		@mdis.mostrar.should == "1 0 0 \n0 2 0 \n0 0 3 "
 	end
+	
+	it "Se deben sumar dos matrices dispersas" do
+    (@mdis+@mdis).should == [[2, 4, 6], [2, 4, 6], [2, 4, 6]]
+  end
+	it "Se deben restar" do
+		(@mdis-@mdis).should == [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+	end
+	
+	it "Se deben sumar dos matrices densas" do
+		(@mden+@mden).should == [[0, 2, 4],[2, 4, 6],[6, 8, 10]]
+	end
+	it "Se deben multiplicar" do
+		(@mdis*@mdis).should == [[18, 36, 54], [18, 36, 54], [18, 36, 54]]
+		(@mdis*@mden).should == [[33, 51, 69], [33, 51, 69], [33, 51, 69]]
+		(@mden*@mdis).should == [[4, 14, 30], [4, 14, 30], [4, 14, 30]]
+	end
+
 end
