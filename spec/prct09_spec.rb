@@ -1,4 +1,5 @@
 require 'rspec'
+require 'prct09/racional.rb'
 require 'prct09/matriz.rb'
 require 'prct09/matriz_dispersa.rb'
 require 'prct09/matriz_densa.rb'
@@ -8,6 +9,12 @@ describe Matriz do
 		#Inicializar variables
 		@mden = Matriz_densa.new([[0,1,2],[1,2,3],[3,4,5]])
 		@mdis = Matriz_dispersa.new 0 => {0 => 1}, 1 => {1 => 2}, 2 => {2 => 3} #Diagonal de 1
+		@mod1 = Matriz_dispersa.new 0=> {0 => 1}, 1 => {1 => Racional.new(1,2)}, 2 => {2 => 3}
+		@mod2 = Matriz_densa.new([[0,1,2],[1,2,3],[3,4,Racional.new(1,2)]])
+	end
+	#Modificacion
+	it "Se deben restar matrices con racionales" do
+		(@mod1-@mod2).should == [[]]
 	end
 	#Sentencias it
 	it "Se debe almacenar una matriz densa" do
