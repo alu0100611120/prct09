@@ -12,11 +12,11 @@ class Matriz
 
 	def mostrar()
 		texto=""
-		for i in 0...@m.length do
+		for i in 0...@fi do
 			if (i>0) then
 				texto += "\n"
 			end
-			for k in 0...@m[i].length do
+			for k in 0...@co do
 				texto += "#{@m[i][k]} "
 			end
 		end
@@ -36,7 +36,7 @@ class Matriz
 		@result = [[]]
 		for i in 0...@fi do
 			for k in 0...@co do
-				@result[i][k] = self.@m[i][k] + o[i][k]
+				@result[i][k] = @m[i][k] + o[i][k]
                         end
 		end
 		return @result

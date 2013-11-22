@@ -16,7 +16,7 @@ describe Matriz do
 	it "Se debe almacenar una matriz dispersa" do
 		@mdis.class.should == Matriz_dispersa
 	end
-	it "Se deben calcular bien el numero de filas y columnas" do
+	it "Se deben calcular bien el numero de filas y columnas para dispersas" do
 		@mdis.fi.should == 3
 		@mdis.co.should == 3
 	end
@@ -41,6 +41,12 @@ describe Matriz do
         end
 	
 	it "Se deben sumar dos matrices dispersas" do
-		@mdis+@mdis.should == 0
+		#@mdis+@mdis.should == 0
+	end
+	it "Se deben mostrar las matrices densas" do
+		@mden.mostrar.should == "0 1 2 \n1 2 3 \n3 4 5 "
+	end 
+	it "Se deben mostrar matrices dispersas" do
+		@mdis.mostrar.should == "1 0 0 \n0 2 0 \n0 0 3 "
 	end
 end
