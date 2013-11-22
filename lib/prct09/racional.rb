@@ -16,6 +16,10 @@ class Racional
                 @num = num/mcd
                 @den = den/mcd
   end
+	def coerce(o)
+		n = Racional.new(o, 1)
+		return [n, self]
+	end
 	
 	def num()#Devuelve el numerador @num
 		@num

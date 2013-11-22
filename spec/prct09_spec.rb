@@ -14,7 +14,7 @@ describe Matriz do
 	end
 	#Modificacion
 	it "Se deben restar matrices con racionales" do
-		(@mod1-@mod2).should == [[]]
+		(@mod1-@mod2).should == [[-3, Racional.new(-13,2), Racional.new(-5,2)], [-3,Racional.new(-13,2), Racional.new(-5, 2)], [-3, Racional.new(-13, 2), Racional.new(-5, 2)]]
 	end
 	#Sentencias it
 	it "Se debe almacenar una matriz densa" do
