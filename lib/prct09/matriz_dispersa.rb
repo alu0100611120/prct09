@@ -9,38 +9,71 @@ class SparseVector
   end
 
   def [](i)
-    @vector[i] 
+    if  @vector[i].class == nil.class
+	0
+    else
+	@vector[i]
+    end 
   end
 
   def to_s
     @vector.to_s
   end
+  def keys
+    @vector.keys
+  end
 end
 
 class Matriz_dispersa < Matriz
 
-  attr_reader :matrix
+  attr_reader :m
 
   def initialize(h = {})
-    @matrix = Hash.new({})
-    for k in h.keys do 
-      @matrix[k] = if h[k].is_a? SparseVector
+    fi,co= 0,0
+    @m = Hash.new({})
+    for k in h.keys do
+      if (k>fi) then fi=k end 
+      @m[k] = if h[k].is_a? SparseVector
                      h[k]
                    else 
-                     @matrix[k] = SparseVector.new(h[k])
+                     @m[k] = SparseVector.new(h[k])
                    end
+      for j in h[k].keys do
+	if (j>co) then co=j end
+      end
     end
+    super(fi+1, co+1)
   end
 
   def [](i)
-    @matrix[i]
+    if @m[i].class == SparseVector then
+	@m[i]
+    else
+	0
+    end
   end
 
-  def col(j)
-    c = {}
-    for r in @matrix.keys do
-      c[r] = @matrix[r].vector[j] if @matrix[r].vector.keys.include? j
+  def max
+    max = -10000
+    for i in @m.keys do
+	for j in @m[i].keys do
+	    if (@m[i][j] > max) then
+      		max = @m[i][j] 
+	    end
+	end
     end
-    SparseVector.new c
-  end
+    max
+   end
+   def min
+    min = 10000
+    for i in @m.keys do
+        for j in @m[i].keys do
+            if (@m[i][j] < min) then
+                min = @m[i][j]       
+            end
+        end
+    end
+    min
+   end
+
 end
